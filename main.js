@@ -6,14 +6,18 @@ the list and checks that the current name is in the string passed in. The output
 let dog_string = "Hello Max, my name is Dog, and I have purple eyes!"
 let dog_names = ["Max","HAS","PuRple","dog"]
 
-function findWords() {
-  for (let i = 0; i < dog_names.length; i++) {
-    console.log(group_of_names[i]);
-    if (i[0] == i[2]) {
-    return "Matched dog_name";
+
+
+function findWords(str,names) {
+for (let i = 0; i < names.length; i++) {
+  if (str.includes(names[i])) {
+    console.log(`Matched ${names[0]}`) 
   } else {
-    return "No matches";
+    console.log("No Matches")
   }
+
+
+findWords(dog_string, dog_names)
 
 //Call method here with parameters
 
@@ -25,12 +29,14 @@ let arr = ["Max","Baseball","Reboot","Goku","Trucks","Rodger"]
 
 function replaceEvens(arr){
     for (let i = 0; i < arr.length; i++) {
-        if (arr[i] % 2 == 0) {
-            return "even index";
-          } else {
-            return i;
+        if (i % 2 == 0) {
+            arr.splice(i, 1, "even index");
+        }
     }
+    return arr;
+  }
 
+replaceEvens(arr)
 
 //Expected output
 //Given arr == ["Max","Baseball","Reboot","Goku","Trucks","Rodger"]
